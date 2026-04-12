@@ -14,7 +14,7 @@
             --border-color: #e5e7eb;
             --btn-bg: #3b82f6;
             --btn-text: #ffffff;
-            --icon-color: #6b7280;
+            --modal-overlay: rgba(0, 0, 0, 0.5);
         }
 
         [data-theme="dark"] {
@@ -25,7 +25,15 @@
             --border-color: #374151;
             --btn-bg: #2563eb;
             --btn-text: #ffffff;
-            --icon-color: #9ca3af;
+            --modal-overlay: rgba(0, 0, 0, 0.7);
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        html.large-text {
+            font-size: 19px;
         }
 
         * {
@@ -38,28 +46,24 @@
             background-color: var(--bg-color); 
             color: var(--text-main); 
             margin: 0; 
-            padding: 16px;
+            padding: 1rem;
             line-height: 1.5;
-            font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        body.large-text {
-            font-size: 18px;
-        }
-
         .container { 
             max-width: 500px; 
             margin: 0 auto; 
+            padding-bottom: 2rem;
         }
 
         .top-controls {
             display: flex;
             justify-content: flex-end;
-            gap: 12px;
-            margin-bottom: 16px;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .icon-btn {
@@ -67,8 +71,8 @@
             border: 1px solid var(--border-color);
             color: var(--text-main);
             border-radius: 50%;
-            width: 44px;
-            height: 44px;
+            width: 2.75rem;
+            height: 2.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -83,15 +87,15 @@
 
         .header {
             text-align: center;
-            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
         }
 
         .header img {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 1.25rem;
             object-fit: cover;
-            margin-bottom: 12px;
+            margin-bottom: 0.75rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
@@ -110,14 +114,16 @@
             justify-content: space-between;
             background: var(--btn-bg); 
             color: var(--btn-text); 
-            padding: 14px 18px; 
-            border-radius: 12px; 
+            padding: 0.875rem 1.125rem; 
+            border-radius: 0.75rem; 
             text-decoration: none; 
-            font-weight: 700; 
-            font-size: 0.95rem;
-            margin-bottom: 24px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
             transition: transform 0.1s ease;
+            text-align: left;
         }
 
         .main-rules-btn:active {
@@ -127,7 +133,24 @@
         .btn-label {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.75rem;
+        }
+
+        .btn-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .btn-subtitle {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: 500;
+            margin-top: -0.1rem;
         }
 
         .faq-section-title { 
@@ -136,16 +159,16 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-muted);
-            margin: 0 0 12px 4px;
+            margin: 0 0 0.75rem 0.25rem;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 0.375rem;
         }
 
         details { 
             background: var(--card-bg); 
-            border-radius: 14px; 
-            margin-bottom: 10px; 
+            border-radius: 0.875rem; 
+            margin-bottom: 0.625rem; 
             border: 1px solid var(--border-color);
             overflow: hidden;
             transition: all 0.3s ease;
@@ -157,7 +180,7 @@
         }
 
         summary { 
-            padding: 16px;
+            padding: 1rem;
             list-style: none; 
             display: flex; 
             justify-content: space-between; 
@@ -173,21 +196,17 @@
         .summary-left {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 0.75rem;
             font-weight: 600;
             font-size: 0.95rem;
-            padding-right: 10px;
+            padding-right: 0.625rem;
             color: var(--text-main);
-        }
-
-        .summary-left .material-symbols-outlined {
-            color: var(--icon-color);
         }
 
         .chevron {
             color: var(--text-muted);
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 22px;
+            font-size: 1.375rem;
         }
 
         details[open] .chevron {
@@ -195,10 +214,109 @@
         }
 
         .content { 
-            padding: 0 16px 16px 52px; 
+            padding: 0 1rem 1rem 3.25rem; 
             font-size: 0.95rem; 
             color: var(--text-muted); 
             border-top: none;
+        }
+
+        .footer-action {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .chat-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.625rem 1rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transition: transform 0.1s ease, background-color 0.3s ease;
+        }
+
+        .chat-btn:active {
+            transform: scale(0.95);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--modal-overlay);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--bg-color);
+            width: 100%;
+            max-width: 500px;
+            max-height: 85vh;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .close-modal-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.25rem;
+            border-radius: 50%;
+        }
+
+        .modal-body {
+            padding: 1.25rem;
+            overflow-y: auto;
+            color: var(--text-main);
+            font-size: 0.95rem;
         }
 
         .material-symbols-outlined {
@@ -223,23 +341,26 @@
             <h1>ПРАВИЛА ГРУПИ<br>«ВАЛКІВСЬКИЙ БАЗАРЧИК»</h1>
         </div>
         
-        <a href="#rules" class="main-rules-btn">
+        <button id="openRulesModal" class="main-rules-btn">
             <div class="btn-label">
-                <span class="material-symbols-outlined">breaking_news</span>
-                <span>ПРАВИЛА ГРУПИ</span>
+                <span class="material-symbols-outlined" style="font-size: 1.75rem;">breaking_news</span>
+                <div class="btn-text-wrapper">
+                    <span class="btn-title">ПРАВИЛА ГРУПИ</span>
+                    <span class="btn-subtitle">Переглянути</span>
+                </div>
             </div>
             <span class="material-symbols-outlined">chevron_right</span>
-        </a>
+        </button>
 
         <div class="faq-section-title">
-            <span class="material-symbols-outlined" style="font-size: 18px;">help</span>
+            <span class="material-symbols-outlined" style="font-size: 1.125rem;">help</span>
             Популярні питання:
         </div>
 
         <details>
             <summary>
                 <div class="summary-left">
-                    <span class="material-symbols-outlined">ad_group</span>
+                    <span class="material-symbols-outlined" style="color: #3b82f6;">ad_group</span>
                     <span>Скільки оголошень я можу опублікувати і як збільшити ліміт?</span>
                 </div>
                 <span class="material-symbols-outlined chevron">expand_more</span>
@@ -250,7 +371,7 @@
         <details>
             <summary>
                 <div class="summary-left">
-                    <span class="material-symbols-outlined">smart_toy</span>
+                    <span class="material-symbols-outlined" style="color: #10b981;">smart_toy</span>
                     <span>Як працює бот?</span>
                 </div>
                 <span class="material-symbols-outlined chevron">expand_more</span>
@@ -261,7 +382,7 @@
         <details>
             <summary>
                 <div class="summary-left">
-                    <span class="material-symbols-outlined">list_alt_check</span>
+                    <span class="material-symbols-outlined" style="color: #8b5cf6;">list_alt_check</span>
                     <span>Які основні правила групи?</span>
                 </div>
                 <span class="material-symbols-outlined chevron">expand_more</span>
@@ -272,7 +393,7 @@
         <details>
             <summary>
                 <div class="summary-left">
-                    <span class="material-symbols-outlined">add_home</span>
+                    <span class="material-symbols-outlined" style="color: #f59e0b;">add_home</span>
                     <span>Що таке оренда гілки?</span>
                 </div>
                 <span class="material-symbols-outlined chevron">expand_more</span>
@@ -283,7 +404,7 @@
         <details>
             <summary>
                 <div class="summary-left">
-                    <span class="material-symbols-outlined">block</span>
+                    <span class="material-symbols-outlined" style="color: #ef4444;">block</span>
                     <span>За що мене заблокували?</span>
                 </div>
                 <span class="material-symbols-outlined chevron">expand_more</span>
@@ -291,13 +412,32 @@
             <div class="content">Текст...</div>
         </details>
 
+        <div class="footer-action">
+            <a href="#" class="chat-btn">
+                <span class="material-symbols-outlined" style="font-size: 1.25rem;">chat</span>
+                Написати
+            </a>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="rulesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Основні правила групи</h2>
+                <button class="close-modal-btn" id="closeRulesModal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Тут буде велетенське простирадло тексту з усіма оновленнями.
+            </div>
+        </div>
     </div>
 
     <script>
         const themeBtn = document.getElementById('themeBtn');
         const a11yBtn = document.getElementById('a11yBtn');
         const html = document.documentElement;
-        const body = document.body;
 
         const savedTheme = localStorage.getItem('theme') || 'light';
         html.setAttribute('data-theme', savedTheme);
@@ -305,7 +445,7 @@
 
         const savedTextSize = localStorage.getItem('textSize') || 'normal';
         if (savedTextSize === 'large') {
-            body.classList.add('large-text');
+            html.classList.add('large-text');
         }
 
         themeBtn.addEventListener('click', () => {
@@ -317,8 +457,8 @@
         });
 
         a11yBtn.addEventListener('click', () => {
-            body.classList.toggle('large-text');
-            const isLarge = body.classList.contains('large-text');
+            html.classList.toggle('large-text');
+            const isLarge = html.classList.contains('large-text');
             localStorage.setItem('textSize', isLarge ? 'large' : 'normal');
         });
 
@@ -326,6 +466,27 @@
             const icon = themeBtn.querySelector('.material-symbols-outlined');
             icon.textContent = theme === 'light' ? 'dark_mode' : 'light_mode';
         }
+
+        const openModalBtn = document.getElementById('openRulesModal');
+        const closeModalBtn = document.getElementById('closeRulesModal');
+        const modal = document.getElementById('rulesModal');
+
+        openModalBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; 
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
 </html>
