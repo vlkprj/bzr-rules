@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="uk" data-theme="light">
 <head>
     <meta charset="UTF-8">
@@ -17,672 +18,808 @@
             --modal-overlay: rgba(0, 0, 0, 0.5);
         }
 
-        [data-theme="dark"] {
-            --bg-color: #1a1a1c;
-            --card-bg: #1f2937;
-            --text-main: #f9fafb;
-            --text-muted: #d1d5db;
-            --border-color: #374151;
-            --btn-bg: #2563eb;
-            --btn-text: #ffffff;
-            --modal-overlay: rgba(0, 0, 0, 0.7);
-        }
 
-        html {
-            font-size: 16px;
-        }
+    [data-theme="dark"] {
+        --bg-color: #1a1a1c;
+        --card-bg: #1f2937;
+        --text-main: #f9fafb;
+        --text-muted: #d1d5db;
+        --border-color: #374151;
+        --btn-bg: #2563eb;
+        --btn-text: #ffffff;
+        --modal-overlay: rgba(0, 0, 0, 0.7);
+    }
 
-        html.large-text {
-            font-size: 19px;
-        }
+    html {
+        font-size: 16px;
+    }
 
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+    html.large-text {
+        font-size: 19px;
+    }
 
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            margin: 0; 
-            padding: 1rem;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+    * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
 
-        .container { 
-            max-width: 500px; 
-            margin: 0 auto; 
-            padding-bottom: 2rem;
-        }
+    body { 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+        background-color: var(--bg-color); 
+        color: var(--text-main); 
+        margin: 0; 
+        padding: 1rem;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-        .top-controls {
-            display: flex;
-            justify-content: flex-end;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
+    .container { 
+        max-width: 500px; 
+        margin: 0 auto; 
+        padding-bottom: 2rem;
+    }
 
-        .icon-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            border-radius: 50%;
-            width: 2.75rem;
-            height: 2.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: background-color 0.3s, transform 0.1s;
-        }
+    .top-controls {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
 
-        .icon-btn:active {
-            transform: scale(0.95);
-        }
+    .icon-btn {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        color: var(--text-main);
+        border-radius: 50%;
+        width: 2.75rem;
+        height: 2.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        transition: background-color 0.3s, transform 0.1s;
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
+    .icon-btn:active {
+        transform: scale(0.95);
+    }
 
-        .header img {
-            width: 5rem;
-            height: 5rem;
-            border-radius: 1.25rem;
-            object-fit: cover;
-            margin-bottom: 0.75rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+    .header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
 
-        h1 { 
-            font-size: 1.2rem; 
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -0.01em;
-            margin: 0;
-            color: var(--text-main);
-        }
+    .header img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 1.25rem;
+        object-fit: cover;
+        margin-bottom: 0.75rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-        .main-rules-btn { 
-            display: flex; 
-            align-items: center;
-            justify-content: space-between;
-            background: var(--btn-bg); 
-            color: var(--btn-text); 
-            padding: 0.875rem 1.125rem; 
-            border-radius: 0.75rem; 
-            text-decoration: none; 
-            border: none;
-            width: 100%;
-            cursor: pointer;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-            transition: transform 0.1s ease;
-            text-align: left;
-        }
+    h1 { 
+        font-size: 1.2rem; 
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        margin: 0;
+        color: var(--text-main);
+    }
 
-        .main-rules-btn:active {
-            transform: scale(0.98);
-        }
+    .main-rules-btn { 
+        display: flex; 
+        align-items: center;
+        justify-content: space-between;
+        background: var(--btn-bg); 
+        color: var(--btn-text); 
+        padding: 0.875rem 1.125rem; 
+        border-radius: 0.75rem; 
+        text-decoration: none; 
+        border: none;
+        width: 100%;
+        cursor: pointer;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        transition: transform 0.1s ease;
+        text-align: left;
+    }
 
-        .btn-label {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
+    .main-rules-btn:active {
+        transform: scale(0.98);
+    }
 
-        .btn-text-wrapper {
-            display: flex;
-            flex-direction: column;
-        }
+    .btn-label {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
 
-        .btn-title {
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
+    .btn-text-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
 
-        .btn-subtitle {
-            font-size: 0.75rem;
-            opacity: 0.8;
-            font-weight: 500;
-            margin-top: -0.1rem;
-        }
+    .btn-title {
+        font-weight: 700;
+        font-size: 0.95rem;
+    }
 
-        .faq-section-title { 
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            margin: 0 0 0.75rem 0.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-        }
+    .btn-subtitle {
+        font-size: 0.75rem;
+        opacity: 0.8;
+        font-weight: 500;
+        margin-top: -0.1rem;
+    }
 
-        details { 
-            background: var(--card-bg); 
-            border-radius: 0.875rem; 
-            margin-bottom: 0.625rem; 
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
+    .faq-section-title { 
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        margin: 0 0 0.75rem 0.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+    }
 
-        details[open] {
-            border-color: var(--text-muted);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-        }
+    details { 
+        background: var(--card-bg); 
+        border-radius: 0.875rem; 
+        margin-bottom: 0.625rem; 
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
 
-        summary { 
-            padding: 1rem;
-            list-style: none; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            cursor: pointer;
-            user-select: none;
-        }
+    details[open] {
+        border-color: var(--text-muted);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
 
-        summary::-webkit-details-marker { 
-            display: none; 
-        }
+    summary { 
+        padding: 1rem;
+        list-style: none; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        cursor: pointer;
+        user-select: none;
+    }
 
-        .summary-left {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding-right: 0.625rem;
-            color: var(--text-main);
-        }
+    summary::-webkit-details-marker { 
+        display: none; 
+    }
 
-        .chevron {
-            color: var(--text-muted);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 1.375rem;
-        }
+    .summary-left {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding-right: 0.625rem;
+        color: var(--text-main);
+    }
 
-        details[open] .chevron {
-            transform: rotate(180deg);
-        }
+    .chevron {
+        color: var(--text-muted);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 1.375rem;
+    }
 
-        .content { 
-            padding: 0 1rem 1rem 3.25rem; 
-            font-size: 0.95rem; 
-            color: var(--text-muted); 
-            border-top: none;
-        }
+    details[open] .chevron {
+        transform: rotate(180deg);
+    }
 
-        .footer-action {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
+    .content { 
+        padding: 0 1rem 1rem 3.25rem; 
+        font-size: 0.95rem; 
+        color: var(--text-muted); 
+        border-top: none;
+    }
 
-        .chat-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.625rem 1rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            transition: transform 0.1s ease, background-color 0.3s ease;
-        }
+    .footer-action {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
 
-        .chat-btn:active {
-            transform: scale(0.95);
-        }
+    .chat-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        color: var(--text-main);
+        padding: 0.625rem 1rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        transition: transform 0.1s ease, background-color 0.3s ease;
+    }
 
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--modal-overlay);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 1000;
-            backdrop-filter: blur(4px);
-        }
+    .chat-btn:active {
+        transform: scale(0.95);
+    }
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--modal-overlay);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+    }
 
-        .modal-content {
-            background: var(--bg-color);
-            width: 100%;
-            max-width: 500px;
-            max-height: 85vh;
-            border-radius: 1rem;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
+    .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
 
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
+    .modal-content {
+        background: var(--bg-color);
+        width: 100%;
+        max-width: 500px;
+        max-height: 85vh;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
 
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid var(--border-color);
-        }
+    .modal-overlay.active .modal-content {
+        transform: translateY(0);
+    }
 
-        .modal-header h2 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--text-main);
-        }
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--border-color);
+    }
 
-        .close-modal-btn {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.25rem;
-            border-radius: 50%;
-        }
+    .modal-header h2 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--text-main);
+    }
 
-        .modal-body {
-            padding: 1.25rem;
-            overflow-y: auto;
-            color: var(--text-main);
-            font-size: 0.95rem;
-        }
+    .close-modal-btn {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem;
+        border-radius: 50%;
+    }
 
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .rule-block { 
-    background: var(--card-bg); 
-    padding: 1.25rem; 
-    border-radius: 1rem; 
-    margin-bottom: 1.25rem; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04); 
-    border: 1px solid var(--border-color);
-}
-.rule-title { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.5rem; }
-.rule-title .material-symbols-outlined { color: var(--btn-bg); }
-.rule-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
-.rule-text p { margin-top: 0; margin-bottom: 1.2rem; }
-.rule-text p:last-child { margin-bottom: 0; }
-.rule-details { margin-top: 0.75rem; background: transparent; border: none; padding: 0; border-radius: 0; margin-bottom: 0; box-shadow: none; }
-.rule-details[open] { border: none; box-shadow: none; }
-.rule-details summary { padding: 0; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--btn-bg); font-weight: 600; cursor: pointer; user-select: none; }
-.rule-details summary::after { display: none; }
-.rule-details .details-content { margin-top: 0.75rem; padding-left: 0.5rem; border-left: 2px solid var(--border-color); font-size: 0.9rem; }
-.tg-buttons-wrapper { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; max-width: 300px; }
-.tg-btn { 
-    background: #2c2c2e; 
-    color: #ffffff; 
-    padding: 10px; 
-    border-radius: 8px; 
-    text-align: center; 
-    font-weight: 500; 
-    font-size: 0.9rem; 
-    border: none;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
+    .modal-body {
+        padding: 1.25rem;
+        overflow-y: auto;
+        color: var(--text-main);
+        font-size: 0.95rem;
+    }
 
-.tg-btn-inline { 
-    display: inline-block; 
-    background: #2c2c2e; 
-    color: #ffffff; 
-    padding: 4px 8px; 
-    border-radius: 6px; 
-    font-weight: 500; 
-    font-size: 0.85rem; 
-    margin: 0 4px; 
-    border: none;
-}
-.tg-buttons-wrapper { margin: 1.5rem 0; }
-.cmd-copy { background: var(--bg-color); padding: 4px 8px; border-radius: 6px; font-family: monospace; color: var(--text-main); cursor: pointer; border: 1px solid var(--border-color); transition: background 0.2s; }
-.cmd-copy:active { background: var(--border-color); }
-.cmd-hint { font-size: 0.75rem; opacity: 0.6; margin-left: 4px; }
-.icon-inline { vertical-align: middle; font-size: 1.1rem; margin-right: 4px; }
-.alert-box {
-    background: var(--bg-color);
-    border: 1px solid var(--border-color);
-    padding: 12px 16px;
-    border-radius: 12px;
-    margin: 1.5rem 0;
-    color: var(--text-main);
-    display: flex;
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* ── Правила── */
+    .rule-block { 
+        background: var(--card-bg); 
+        padding: 1.25rem; 
+        border-radius: 1rem; 
+        margin-bottom: 1.25rem; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04); 
+        border: 1px solid var(--border-color);
+    }
+
+    .rule-title { 
+        display: flex; 
+        align-items: center; 
+        gap: 0.5rem; 
+        font-weight: 700; 
+        font-size: 1.05rem; 
+        color: var(--text-main); 
+        margin-bottom: 0.5rem; 
+    }
+
+    .rule-title .material-symbols-outlined { 
+        color: var(--btn-bg); 
+    }
+
+    
+    .rule-text { 
+        font-size: 0.95rem; 
+        color: var(--text-main); 
+        line-height: 1.6; 
+    }
+
+    .rule-text p { 
+        margin-top: 0; 
+        margin-bottom: 1.2rem; 
+    }
+
+    .rule-text p:last-child { 
+        margin-bottom: 0; 
+    }
+
+   
+    .rule-details { 
+        margin-top: 0.75rem; 
+        background: transparent; 
+        border: none; 
+        padding: 0; 
+        border-radius: 0; 
+        margin-bottom: 0; 
+        box-shadow: none; 
+    }
+
+    .rule-details[open] { 
+        border: none; 
+        box-shadow: none; 
+    }
+
+    .rule-details summary { 
+        padding: 0; 
+        display: inline-flex; 
+        align-items: center; 
+        gap: 0.4rem; 
+        color: var(--btn-bg); 
+        font-weight: 600; 
+        cursor: pointer; 
+        user-select: none; 
+    }
+
+    .rule-details summary::after { 
+        display: none; 
+    }
+
+ 
+    .rule-details .details-content { 
+        margin-top: 0.75rem; 
+        padding-left: 0.75rem; 
+        border-left: 2px solid var(--border-color); 
+        font-size: 0.9rem; 
+        color: var(--text-main);
+    }
+
+ 
+    .tg-buttons-wrapper { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 6px; 
+        margin: 1rem 0; 
+        max-width: 300px; 
+    }
+
+    .tg-btn { 
+        background: #2c2c2e; 
+        color: #ffffff; 
+        padding: 10px; 
+        border-radius: 8px; 
+        text-align: center; 
+        font-weight: 500; 
+        font-size: 0.9rem; 
+        border: none;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .tg-btn-inline { 
+        display: inline-block; 
+        background: #2c2c2e; 
+        color: #ffffff; 
+        padding: 4px 8px; 
+        border-radius: 6px; 
+        font-weight: 500; 
+        font-size: 0.85rem; 
+        margin: 0 4px; 
+        border: none;
+    }
+
+    .inline-btn-wrap {
+        display: block;
+        text-align: center;
+        margin: 1.2rem 0;
+    }
+
+    
+    .cmd-copy { 
+        background: var(--bg-color); 
+        padding: 4px 8px; 
+        border-radius: 6px; 
+        font-family: monospace; 
+        color: var(--text-main); 
+        cursor: pointer; 
+        border: 1px solid var(--border-color); 
+        transition: background 0.2s; 
+    }
+
+    .cmd-copy:active { 
+        background: var(--border-color); 
+    }
+
+    .cmd-hint { 
+        font-size: 0.75rem; 
+        opacity: 0.6; 
+        margin-left: 4px; 
+    }
+
+    .icon-inline { 
+        vertical-align: middle; 
+        font-size: 1.1rem; 
+        margin-right: 4px; 
+    }
+
+    
+    .alert-box {
+        background: var(--bg-color);
+        border: 1px solid var(--border-color);
+        padding: 12px 16px;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .alert-box .material-symbols-outlined {
+        color: var(--text-muted);
+        font-size: 1.25rem;
+        flex-shrink: 0;
+    }
+    .link-btn {
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.4rem;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    transition: opacity 0.15s ease;
 }
-.inline-btn-wrap {
-    display: block;
-    text-align: center;
-    margin: 1.2rem 0;
+
+.link-btn:active {
+    opacity: 0.8;
 }
-    </style>
+
+</style>
+
+
 </head>
 <body>
 
-    <div class="container">
-        <div class="top-controls">
-            <button class="icon-btn" id="a11yBtn">
-                <span class="material-symbols-outlined">text_increase</span>
-            </button>
-            <button class="icon-btn" id="themeBtn">
-                <span class="material-symbols-outlined">dark_mode</span>
-            </button>
-        </div>
 
-        <div class="header">
-            <img src="assets/vb.PNG" alt="Лого">
-            <h1>ПРАВИЛА ГРУПИ<br>«ВАЛКІВСЬКИЙ БАЗАРЧИК»</h1>
-        </div>
-        
-        <button id="openRulesModal" class="main-rules-btn">
-            <div class="btn-label">
-                <span class="material-symbols-outlined" style="font-size: 1.75rem;">breaking_news</span>
-                <div class="btn-text-wrapper">
-                    <span class="btn-title">ПРАВИЛА ГРУПИ</span>
-                    <span class="btn-subtitle">Переглянути</span>
-                </div>
-            </div>
-            <span class="material-symbols-outlined">chevron_right</span>
+<div class="container">
+    <div class="top-controls">
+        <button class="icon-btn" id="a11yBtn">
+            <span class="material-symbols-outlined">text_increase</span>
         </button>
-
-        <div class="faq-section-title">
-            <span class="material-symbols-outlined" style="font-size: 1.125rem;">help</span>
-            Популярні питання:
-        </div>
-
-         <details>
-            <summary>
-                <div class="summary-left">
-                    <span class="material-symbols-outlined" style="color: #3b82f6;">ad_group</span>
-                    <span>Скільки оголошень можна публікувати та як збільшити ліміт?</span>
-                </div>
-                <span class="material-symbols-outlined chevron">expand_more</span>
-            </summary>
-            <div class="content">
-                <p style="margin-top:0;">Базовий безкоштовний ліміт для всіх — <strong>3 оголошення на тиждень</strong>. Оновлення лімітів відбувається автоматично щонеділі. Перевірити свій залишок можна в будь-якій гілці, написавши команду <code>/mylimit</code>.</p>
-                <p>Якщо ви активно ведете бізнес і цього мало, ви можете отримати преміум-тарифи (Lite, Pro або Безлім+). Вони збільшують кількість постів (до 30, 50 або безліміт на місяць) і повністю вимикають перевірки від бота.</p>
-                <p><a href="https://t.me/vlkrek_bot/reklama" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 600;">👉 Збільшити ліміт тут</a></p>
-            </div>
-        </details>
-
-        <details>
-            <summary>
-                <div class="summary-left">
-                    <span class="material-symbols-outlined" style="color: #10b981;">smart_toy</span>
-                    <span>Як працює бот-модератор?</span>
-                </div>
-                <span class="material-symbols-outlined chevron">expand_more</span>
-            </summary>
-            <div class="content">
-                <p style="margin-top:0;">Після кожної вашої публікації бот запитає, чи правильно ви обрали категорію та локацію. Вам <strong>обов'язково</strong> треба натиснути кнопку <em>«✅ Так, все ок»</em>. Після цього треба підтвердити актуальність оголошення для Валок. Якщо ви це проігноруєте — бот мовчки видалить ваш пост.</p>
-                <p><strong>Винятки:</strong> Бот не списує ліміти у гілках: <em>«Віддам безкоштовно»</em>, <em>«Підкажіть • Порадьте»</em>, <em>«Загублено • Знайдено»</em> та <em>«Скарги • ЧС • Шахраї»</em>. Там повна свобода.</p>
-            </div>
-        </details>
-
-        <details>
-            <summary>
-                <div class="summary-left">
-                    <span class="material-symbols-outlined" style="color: #8b5cf6;">list_alt_check</span>
-                    <span>Які основні правила групи?</span>
-                </div>
-                <span class="material-symbols-outlined chevron">expand_more</span>
-            </summary>
-            <div class="content">
-                <p style="margin-top:0;">Коротко: будьте адекватними. Публікуйте товари тільки у відповідні за змістом гілки. Не спамте одним оголошенням у всі категорії. Вказуйте ціну в пості. Обговорюйте деталі в особистих повідомленнях. Повний текст правил можна прочитати, натиснувши велику кнопку вгорі.</p>
-            </div>
-        </details>
-
-        <details>
-            <summary>
-                <div class="summary-left">
-                    <span class="material-symbols-outlined" style="color: #f59e0b;">add_home</span>
-                    <span>Що таке оренда гілки?</span>
-                </div>
-                <span class="material-symbols-outlined chevron">expand_more</span>
-            </summary>
-            <div class="content">
-                <p style="margin-top:0;">Це ваша власна вітрина всередині Базарчику. Ми створюємо окрему закріплену категорію спеціально для вашого бізнесу (за бажанням — з вашим логотипом). Туди ви можете публікувати свій асортимент чи послуги абсолютно безлімітно і без перевірок бота.</p>
-                <p><a href="https://t.me/vlkrek_bot/reklama" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 600;">Орендувати гілку можна тут 👉🏻</a></p>
-            </div>
-        </details>
-
-        <details>
-            <summary>
-                <div class="summary-left">
-                    <span class="material-symbols-outlined" style="color: #ef4444;">block</span>
-                    <span>За що мене заблокували?</span>
-                </div>
-                <span class="material-symbols-outlined chevron">expand_more</span>
-            </summary>
-            <div class="content">
-                <p style="margin-top:0;">Найчастіші причини бану або муту (блокування можливості писати на 48 годин):</p>
-                <ul style="padding-left: 20px; margin-top: 5px;">
-                    <li>Спам одним і тим самим оголошенням у кількох різних категоріях.</li>
-                    <li>Систематична публікація оголошень у невідповідні гілки (наприклад, продаж дивану в «Шукаю»).</li>                    
-                    <li>Шахрайство або неадекватна поведінка.</li>
-                </ul>
-            </div>
-        </details>
-
-
-        <div class="footer-action">
-    <a href="https://t.me/valkysho_bot" target="_blank" class="chat-btn">
-        <span class="material-symbols-outlined" style="font-size: 1.25rem;">chat</span>
-        Написати
-    </a>
-</div>
-
-    <div class="modal-overlay" id="rulesModal">
-        <div class="modal-content">
-    <div class="modal-header">
-        <h2>📋 ПРАВИЛА ГРУПИ</h2>
-        <button class="close-modal-btn" id="closeRulesModal">
-            <span class="material-symbols-outlined">close</span>
+        <button class="icon-btn" id="themeBtn">
+            <span class="material-symbols-outlined">dark_mode</span>
         </button>
     </div>
-    <div class="modal-body">
-        <p style="margin-top: 0; font-weight: 500;">Тут все просто, але є кілька речей, які треба знати</p>
 
-        <div class="rule-block">
-            <div class="rule-title">
-                <span class="material-symbols-outlined">ad</span>
-                1 оголошення = 1 товар або послуга
-            </div>
-            <div class="rule-text">
-                Продаєте джинси, курей і ще й робите манікюр? Це три окремі оголошення в трьох окремих категоріях. Бажано одразу з цінами.
+    <div class="header">
+        <img src="assets/vb.PNG" alt="Лого">
+        <h1>ПРАВИЛА ГРУПИ<br>«ВАЛКІВСЬКИЙ БАЗАРЧИК»</h1>
+    </div>
+    
+    <button id="openRulesModal" class="main-rules-btn">
+        <div class="btn-label">
+            <span class="material-symbols-outlined" style="font-size: 1.75rem;">breaking_news</span>
+            <div class="btn-text-wrapper">
+                <span class="btn-title">ПРАВИЛА ГРУПИ</span>
+                <span class="btn-subtitle">Переглянути</span>
             </div>
         </div>
+        <span class="material-symbols-outlined">chevron_right</span>
+    </button>
 
-        <div class="rule-block">
-            <div class="rule-title">
-                <span class="material-symbols-outlined">splitscreen_add — style="color: #3b82f6;</span>
-                Публікуйте в правильну категорію
+    <div class="faq-section-title">
+        <span class="material-symbols-outlined" style="font-size: 1.125rem;">help</span>
+        Популярні питання:
+    </div>
+
+    <details>
+        <summary>
+            <div class="summary-left">
+                <span class="material-symbols-outlined" style="color: #3b82f6;">ad_group</span>
+                <span>Скільки оголошень можна публікувати та як збільшити ліміт?</span>
             </div>
-            <div class="rule-text">
-                <p>Здається очевидним, але не для всіх. <br>
-                Публікувати оголошення потрібно тільки у відповідну для вашого оголошення гілку. <br>
-                Спамите своїм оголошенням в усіх категоріях одразу — на перший раз ми просто видалимо всі ваші оголошення, на другий раз — бан. Просто не треба так робити.</p>
+            <span class="material-symbols-outlined chevron">expand_more</span>
+        </summary>
+        <div class="content">
+            <p style="margin-top:0;">Базовий безкоштовний ліміт для всіх — <strong>3 оголошення на тиждень</strong>. Оновлення лімітів відбувається автоматично щонеділі. Перевірити свій залишок можна в будь-якій гілці, написавши команду <code>/mylimit</code>.</p>
+            <p>Якщо ви активно ведете бізнес і цього мало, ви можете отримати преміум-тарифи (Lite, Pro або Безлім+). Вони збільшують кількість постів (до 30, 50 або безліміт на місяць) і повністю вимикають перевірки від бота.</p>
+           <!-- Збільшити ліміт -->
+<a href="https://t.me/vlkrek_bot/reklama" target="_blank" class="link-btn">
+    <span class="material-symbols-outlined" style="font-size: 1.1rem;">arrow_forward</span>
+    Збільшити ліміт
+</a>
 
-                <details class="rule-details">
-                    <summary>
-                        <span class="material-symbols-outlined" style="font-size: 1.25rem;">add_circle — style="color: #10b981;</span>
-                        Детальніше
-                    </summary>
-                    <div class="details-content">
-                        <p>• Публікація оголошень про ноготочки в категорії «Сільгосп тварини/продукти» ніяк не підвищить його ефективність, як і ваша «свіжа телятина» в категорії «Краса і догляд».</p>
-                        <p>• Категорія «Домашні тварини» створена не для живих чи мертвих курочок і козочок, для них є категорія «Сільгосп тварини / продукція» або якщо вже вашій курочці прийшов капєц — в «Продукти • Їжа» .</p>
-                        <p>• «Домашні тварини» — це все про і для котиків, песиків, гризунів, папуг і так далі.</p>
-                        <p>• Категорія «Шукаю / куплю» натякає на своє призначення прямо у своїй назві, туди не треба просто так публікувати свої «Продам» (хіба що у випадку, якщо ви відповідаєте комусь на їх «Шукаю/Куплю»).</p>
-                        <p>Всі інші категорії працюють так само. Надаєте якусь послугу: ремонтуєте, фотографуєте, копаєте, малюєте, нянчитесь, фарбуєте, печете торти на замовлення, танцюєте у костюмі пса патрона на святах, консультуєте і тд — вам у «Послуги» (ні, не в «Вакансії • Робота»).</p>
-                        <p>• Посівні буряки і все інше, що треба спочатку посадити — в «Сільгосп товари і продукція», а не в «Їжа • Продукти»</p>
-                        <p>Детальніше про правила в окремих «проблемних» категоріях:</p>
-                        <p>Вакансії • Робота:<br><a href="https://t.me/valkybazar/414/160148" target="_blank">t.me/valkybazar/414/160148</a></p>
-                        <p>Продукти • Їжа:<br><a href="https://t.me/valkybazar/424/160260" target="_blank">t.me/valkybazar/424/160260</a></p>
-                        <p>Послуги:<br><a href="https://t.me/valkybazar/410/160258" target="_blank">t.me/valkybazar/410/160258</a></p>
-                        <p>Товари для дому і саду • Декор:<br><a href="https://t.me/valkybazar/418/160223" target="_blank">t.me/valkybazar/418/160223</a></p>
-                        <p>Куплю • Шукаю:<br><a href="https://t.me/valkybazar/405/160133" target="_blank">t.me/valkybazar/405/160133</a></p>
-                        <p>Якщо вам прям дуже не вистачає якоїсь категорії — пишіть в гілку «Питання та пропозиції щодо групи» або нам в бот <a href="https://t.me/valkysho_bot" target="_blank">@valkysho_bot</a></p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="summary-left">
+                <span class="material-symbols-outlined" style="color: #10b981;">smart_toy</span>
+                <span>Як працює бот-модератор?</span>
+            </div>
+            <span class="material-symbols-outlined chevron">expand_more</span>
+        </summary>
+        <div class="content">
+            <p style="margin-top:0;">Після кожної вашої публікації бот запитує, чи правильно ви обрали категорію та локацію. Вам <strong>обов'язково</strong> треба натиснути кнопку <em>«✅ Так, все ок»</em>. Після цього треба підтвердити актуальність оголошення для Валок. Якщо ви це проігноруєте — бот видалить ваш пост.</p>
+            <p><strong>Винятки:</strong> Бот не списує ліміти у гілках: <em>«Віддам безкоштовно»</em>, <em>«Підкажіть • Порадьте»</em>, <em>«Загублено • Знайдено»</em> та <em>«Скарги • ЧС • Шахраї»</em>. Там повна свобода.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="summary-left">
+                <span class="material-symbols-outlined" style="color: #8b5cf6;">list_alt_check</span>
+                <span>Які основні правила групи?</span>
+            </div>
+            <span class="material-symbols-outlined chevron">expand_more</span>
+        </summary>
+        <div class="content">
+            <p style="margin-top:0;">Коротко: будьте адекватними. Публікуйте товари тільки у відповідні за змістом гілки. Не спамте одним оголошенням у всі категорії. Вказуйте ціну в пості. Обговорюйте деталі в особистих повідомленнях. Повний текст правил можна прочитати, натиснувши велику кнопку вгорі.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="summary-left">
+                <span class="material-symbols-outlined" style="color: #f59e0b;">add_home</span>
+                <span>Що таке оренда гілки?</span>
+            </div>
+            <span class="material-symbols-outlined chevron">expand_more</span>
+        </summary>
+        <div class="content">
+            <p style="margin-top:0;">Це ваша власна вітрина всередині Базарчику. Ми створюємо окрему закріплену категорію спеціально для вашого бізнесу (з вашою назвою та за бажанням — з вашим логотипом). Туди ви можете публікувати асортимент вашого магазину, фото ваших робіт, опис послуг, прайс, акції, корисну інформація про товари/послуги, місцезнаходження, контакти тощо. Абсолютно безлімітно і без перевірок бота.</p>
+            <!-- Орендувати гілку -->
+<a href="https://t.me/vlkrek_bot/reklama" target="_blank" class="link-btn">
+    <span class="material-symbols-outlined" style="font-size: 1.1rem;">arrow_forward</span>
+    Орендувати гілку
+</a>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="summary-left">
+                <span class="material-symbols-outlined" style="color: #ef4444;">block</span>
+                <span>За що мене заблокували?</span>
+            </div>
+            <span class="material-symbols-outlined chevron">expand_more</span>
+        </summary>
+        <div class="content">
+            <p style="margin-top:0;">Найчастіші причини бану або муту (блокування можливості писати на 48 годин):</p>
+            <ul style="padding-left: 20px; margin-top: 5px;">
+                <li>Спам одним і тим самим оголошенням у кількох різних категоріях.</li>
+                <li>Систематична публікація оголошень у невідповідні гілки (наприклад, продаж дивану в «Шукаю»).</li>                    
+                <li>Шахрайство або неадекватна поведінка.</li>
+            </ul>
+        </div>
+    </details>
+
+    <div class="footer-action">
+        <a href="https://t.me/valkysho_bot" target="_blank" class="chat-btn">
+            <span class="material-symbols-outlined" style="font-size: 1.25rem;">chat</span>
+            Написати
+        </a>
+    </div>
+</div>
+
+<div class="modal-overlay" id="rulesModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>📋 ПРАВИЛА ГРУПИ</h2>
+            <button class="close-modal-btn" id="closeRulesModal">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p style="margin-top: 0; font-weight: 500;">Тут все просто, але є кілька речей, які треба знати</p>
+
+            <div class="rule-block">
+                <div class="rule-title">
+                    <span class="material-symbols-outlined">ad</span>
+                    1 оголошення = 1 товар або послуга
+                </div>
+                <div class="rule-text">
+                    Продаєте джинси, курей і ще й робите манікюр? Це три окремі оголошення в трьох окремих категоріях. Бажано одразу з цінами.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">
+                    <span class="material-symbols-outlined" style="color: #3b82f6;">splitscreen_add</span>
+                    Публікуйте в правильну категорію
+                </div>
+                <div class="rule-text">
+                    <p>Здається очевидним, але не для всіх. <br>
+                    Публікувати оголошення потрібно тільки у відповідну для вашого оголошення гілку. <br>
+                    Спамите своїм оголошенням в усіх категоріях одразу — на перший раз ми просто видалимо всі ваші оголошення, на другий раз — бан. Просто не треба так робити.</p>
+
+                    <details class="rule-details">
+                        <summary>
+                            <span class="material-symbols-outlined" style="font-size: 1.25rem; color: #10b981;">add_circle</span>
+                            Детальніше
+                        </summary>
+                        <div class="details-content">
+                            <p>• Публікація оголошень про ноготочки в категорії «Сільгосп тварини/продукти» ніяк не підвищить його ефективність, як і ваша «свіжа телятина» в категорії «Краса і догляд».</p>
+                            <p>• Категорія «Домашні тварини» створена не для живих чи мертвих курочок і козочок, для них є категорія «Сільгосп тварини / продукція» або якщо вже вашій курочці прийшов капєц — в «Продукти • Їжа» .</p>
+                            <p>• «Домашні тварини» — це все про і для котиків, песиків, гризунів, папуг і так далі.</p>
+                            <p>• Категорія «Шукаю / куплю» натякає на своє призначення прямо у своїй назві, туди не треба просто так публікувати свої «Продам» (хіба що у випадку, якщо ви відповідаєте комусь на їх «Шукаю/Куплю»).</p>
+                            <p>Всі інші категорії працюють так само. Надаєте якусь послугу: ремонтуєте, фотографуєте, копаєте, малюєте, нянчитесь, фарбуєте, печете торти на замовлення, танцюєте у костюмі пса патрона на святах, консультуєте і тд — вам у «Послуги» (ні, не в «Вакансії • Робота»).</p>
+                            <p>• Посівні буряки і все інше, що треба спочатку посадити — в «Сільгосп товари і продукція», а не в «Їжа • Продукти»</p>
+                            <p>Детальніше про правила в окремих «проблемних» категоріях:</p>
+                            <p>Вакансії • Робота:<br><a href="https://t.me/valkybazar/414/160148" target="_blank">t.me/valkybazar/414/160148</a></p>
+                            <p>Продукти • Їжа:<br><a href="https://t.me/valkybazar/424/160260" target="_blank">t.me/valkybazar/424/160260</a></p>
+                            <p>Послуги:<br><a href="https://t.me/valkybazar/410/160258" target="_blank">t.me/valkybazar/410/160258</a></p>
+                            <p>Товари для дому і саду • Декор:<br><a href="https://t.me/valkybazar/418/160223" target="_blank">t.me/valkybazar/418/160223</a></p>
+                            <p>Куплю • Шукаю:<br><a href="https://t.me/valkybazar/405/160133" target="_blank">t.me/valkybazar/405/160133</a></p>
+                            <p>Якщо вам прям дуже не вистачає якоїсь категорії — пишіть в гілку «Питання та пропозиції щодо групи» або нам в бот <a href="https://t.me/valkysho_bot" target="_blank">@valkysho_bot</a></p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">
+                    <span class="material-symbols-outlined">sell</span>
+                    Пишіть ціни одразу
+                </div>
+                <div class="rule-text">
+                    Зараз це не суворе правило, але бажано поважати чужий час і вказувати ціну чи прайс прямо у вашому оголошенні, якщо це можливо. Усі деталі обговорюйте виключно в особистих повідомленнях.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">
+                    <span class="material-symbols-outlined">smart_toy</span>
+                    Як працює бот в групі
+                </div>
+                <div class="rule-text">
+                    <p><span class="material-symbols-outlined icon-inline" style="color: #3b82f6;">counter_1</span> Після публікації оголошення бот попросить вас підтвердити обрану категорію (гілку) кнопками:</p>
+
+                    <div class="tg-buttons-wrapper">
+                        <div class="tg-btn">✅ Так, все ок</div>
+                        <div class="tg-btn">😬 Ой, не туди</div>
                     </div>
-                </details>
+
+                    <p>Уважно подивіться на ваше оголошення і на категорію в яку ви його публікуєте.<br>
+                    Якщо все ок — просто натисніть:</p>
+
+                    <div class="inline-btn-wrap">
+                        <span class="tg-btn-inline">✅ Так, все ок</span>
+                    </div>
+
+                    <p><span class="material-symbols-outlined icon-inline" style="color: #10b981;">counter_2</span> Далі бот перевіряє, чи актуальне оголошення для Валок, і пропонує 4 варіанти:</p>
+
+                    <div class="tg-buttons-wrapper">
+                        <div class="tg-btn">🏡 Валки</div>
+                        <div class="tg-btn">🏘️ Валки і сусідні громади</div>
+                        <div class="tg-btn">🏙️ Харків</div>
+                        <div class="tg-btn">🛣️ Інша область / місто</div>
+                    </div>
+
+                    <p>Просто оберіть відповідний варіант.</p>
+
+                    <div class="alert-box">
+                        <span class="material-symbols-outlined">info</span>
+                        <span>Якщо ви проігноруєте перевірку, бот видалить ваше оголошення</span>
+                    </div>
+
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--text-main);">
+                        <span class="material-symbols-outlined icon-inline">chat_paste_go</span> Команди бота
+                    </p>
+                    <p>
+                        <span class="cmd-copy" onclick="navigator.clipboard.writeText('/mylimit')">/mylimit</span> <span class="cmd-hint">[натисніть, щоб скопіювати]</span> — перевірити свій ліміт
+                    </p>
+                    <p>
+                        <span class="cmd-copy" onclick="navigator.clipboard.writeText('@Admin')">@Admin</span> <span class="cmd-hint">[натисніть, щоб скопіювати]</span> — покликати адмінів
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div class="rule-block">
-            <div class="rule-title">
-                <span class="material-symbols-outlined">sell</span>
-                Пишіть ціни одразу
-            </div>
-            <div class="rule-text">
-                Зараз це не суворе правило, але бажано поважати чужий час і вказувати ціну чи прайс прямо у вашому оголошенні, якщо це можливо. Усі деталі обговорюйте виключно в особистих повідомленнях.
-            </div>
-        </div>
-
-        <div class="rule-block">
-            <div class="rule-title">
-                <span class="material-symbols-outlined">smart_toy</span>
-                Як працює бот в групі
-            </div>
-            <div class="rule-text">
-                <p><span class="material-symbols-outlined icon-inline" style="color: #3b82f6;">counter_1</span> Після публікації оголошення бот попросить вас підтвердити обрану категорію (гілку) кнопками:</p>
-
-<div class="tg-buttons-wrapper">
-    <div class="tg-btn">✅ Так, все ок</div>
-    <div class="tg-btn">😬 Ой, не туди</div>
-</div>
-
-<p>Уважно подивіться на ваше оголошення і на категорію в яку ви його публікуєте.<br>
-Якщо все ок — просто натисніть:</p>
-
-<div class="inline-btn-wrap">
-    <span class="tg-btn-inline">✅ Так, все ок</span>
-</div>
-
-<p><span class="material-symbols-outlined icon-inline" style="color: #10b981;">counter_2</span> Далі бот перевіряє, чи актуальне оголошення для Валок, і пропонує 4 варіанти:</p>
-
-<div class="tg-buttons-wrapper">
-    <div class="tg-btn">🏡 Валки</div>
-    <div class="tg-btn">🏘️ Валки і сусідні громади</div>
-    <div class="tg-btn">🏙️ Харків</div>
-    <div class="tg-btn">🛣️ Інша область / місто</div>
-</div>
-
-<p>Просто оберіть відповідний варіант.</p>
-
-<div class="alert-box">
-    <span class="material-symbols-outlined" style="color: #ef4444;">brightness_alert</span>
-    <span>Якщо ви проігноруєте перевірку — бот видалить ваше оголошення</span>
-</div>
-
-
-                <p style="margin-top: 1rem; font-weight: 600; color: var(--text-main);">
-                    <span class="material-symbols-outlined icon-inline">chat_paste_go</span> Команди бота
-                </p>
-                <p>
-                    <span class="cmd-copy" onclick="navigator.clipboard.writeText('/mylimit')">/mylimit</span> <span class="cmd-hint">[натисніть, щоб скопіювати]</span> — перевірити свій ліміт
-                </p>
-                <p>
-                    <span class="cmd-copy" onclick="navigator.clipboard.writeText('@Admin')">@Admin</span> <span class="cmd-hint">[натисніть, щоб скопіювати]</span> — покликати адмінів
-                </p>
-            </div>
-        </div>
-
-        <div class="rule-block">
-            <div class="rule-title">
-                <span class="material-symbols-outlined">finance_mode — style="color: #f59e0b;</span>
-                Ліміти
-            </div>
-            <div class="rule-text">
-                <p>Базовий ліміт для всіх — 3 оголошення / тиждень. Ліміт вичерпався, але терміново треба опублікувати оголошення? Після повідомлення бота натисніть «Скинути ліміт позачергово» (доступно один раз на місяць).</p>
-                <p>Активно продаєте і трьох постів замало? Є спеціальні тарифи з більшими лімітами, безлімітом → <a href="https://t.me/vlkrek_bot/reklama" target="_blank">t.me/vlkrek_bot/reklama</a></p>
+            <div class="rule-block">
+                <div class="rule-title">
+                    <span class="material-symbols-outlined" style="color: #f59e0b;">finance_mode</span>
+                    Ліміти
+                </div>
+                <div class="rule-text">
+                    <p>Базовий ліміт для всіх — 3 оголошення / тиждень. Ліміт вичерпався, але терміново треба опублікувати оголошення? Після повідомлення бота натисніть «Скинути ліміт позачергово» (доступно один раз на місяць).</p>
+                    <p>Активно продаєте і трьох постів замало? Є спеціальні тарифи з більшими лімітами, безлімітом → <a href="https://t.me/vlkrek_bot/reklama" target="_blank">t.me/vlkrek_bot/reklama</a></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<script>
+    const themeBtn = document.getElementById('themeBtn');
+    const a11yBtn = document.getElementById('a11yBtn');
+    const html = document.documentElement;
 
-    <script>
-        const themeBtn = document.getElementById('themeBtn');
-        const a11yBtn = document.getElementById('a11yBtn');
-        const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
 
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
+    const savedTextSize = localStorage.getItem('textSize') || 'normal';
+    if (savedTextSize === 'large') {
+        html.classList.add('large-text');
+    }
 
-        const savedTextSize = localStorage.getItem('textSize') || 'normal';
-        if (savedTextSize === 'large') {
-            html.classList.add('large-text');
-        }
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
 
-        themeBtn.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
+    a11yBtn.addEventListener('click', () => {
+        html.classList.toggle('large-text');
+        const isLarge = html.classList.contains('large-text');
+        localStorage.setItem('textSize', isLarge ? 'large' : 'normal');
+    });
 
-        a11yBtn.addEventListener('click', () => {
-            html.classList.toggle('large-text');
-            const isLarge = html.classList.contains('large-text');
-            localStorage.setItem('textSize', isLarge ? 'large' : 'normal');
-        });
+    function updateThemeIcon(theme) {
+        const icon = themeBtn.querySelector('.material-symbols-outlined');
+        icon.textContent = theme === 'light' ? 'dark_mode' : 'light_mode';
+    }
 
-        function updateThemeIcon(theme) {
-            const icon = themeBtn.querySelector('.material-symbols-outlined');
-            icon.textContent = theme === 'light' ? 'dark_mode' : 'light_mode';
-        }
+    const openModalBtn = document.getElementById('openRulesModal');
+    const closeModalBtn = document.getElementById('closeRulesModal');
+    const modal = document.getElementById('rulesModal');
 
-        const openModalBtn = document.getElementById('openRulesModal');
-        const closeModalBtn = document.getElementById('closeRulesModal');
-        const modal = document.getElementById('rulesModal');
+    openModalBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    });
 
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-        });
+    closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; 
+    });
 
-        closeModalBtn.addEventListener('click', () => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
             modal.classList.remove('active');
-            document.body.style.overflow = ''; 
-        });
+            document.body.style.overflow = '';
+        }
+    });
+</script>
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    </script>
 </body>
 </html>
