@@ -797,60 +797,59 @@
 </div>
 
 <script>
-    const themeBtn = document.getElementById('themeBtn');
-    const a11yBtn = document.getElementById('a11yBtn');
-    const html = document.documentElement;
+    document.addEventListener('DOMContentLoaded', () => {
+        function updateThemeIcon(theme) {
+            const icon = themeBtn.querySelector('.material-symbols-outlined');
+            icon.textContent = theme === 'light' ? 'dark_mode' : 'light_mode';
+        }
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+        const themeBtn = document.getElementById('themeBtn');
+        const a11yBtn = document.getElementById('a11yBtn');
+        const html = document.documentElement;
 
-    const savedTextSize = localStorage.getItem('textSize') || 'normal';
-    if (savedTextSize === 'large') {
-        html.classList.add('large-text');
-    }
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
 
-    themeBtn.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
+        const savedTextSize = localStorage.getItem('textSize') || 'normal';
+        if (savedTextSize === 'large') html.classList.add('large-text');
 
-    a11yBtn.addEventListener('click', () => {
-        html.classList.toggle('large-text');
-        const isLarge = html.classList.contains('large-text');
-        localStorage.setItem('textSize', isLarge ? 'large' : 'normal');
-    });
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
 
-    function updateThemeIcon(theme) {
-        const icon = themeBtn.querySelector('.material-symbols-outlined');
-        icon.textContent = theme === 'light' ? 'dark_mode' : 'light_mode';
-    }
+        a11yBtn.addEventListener('click', () => {
+            html.classList.toggle('large-text');
+            localStorage.setItem('textSize', html.classList.contains('large-text') ? 'large' : 'normal');
+        });
 
-    const openModalBtn = document.getElementById('openRulesModal');
-    const closeModalBtn = document.getElementById('closeRulesModal');
-    const modal = document.getElementById('rulesModal');
+        const openModalBtn = document.getElementById('openRulesModal');
+        const closeModalBtn = document.getElementById('closeRulesModal');
+        const modal = document.getElementById('rulesModal');
 
-    openModalBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; 
-    });
+        openModalBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
 
-    closeModalBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = ''; 
-    });
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        closeModalBtn.addEventListener('click', () => {
             modal.classList.remove('active');
             document.body.style.overflow = '';
-        }
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.documentElement.style.visibility = '';
     });
-    
-    document.documentElement.style.visibility = '';
 </script>
 
 </body>
