@@ -322,7 +322,14 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .rule-block { margin-bottom: 1.25rem; }
+        .rule-block { 
+    background: var(--card-bg); 
+    padding: 1.25rem; 
+    border-radius: 1rem; 
+    margin-bottom: 1.25rem; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04); 
+    border: 1px solid var(--border-color);
+}
 .rule-title { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.5rem; }
 .rule-title .material-symbols-outlined { color: var(--btn-bg); }
 .rule-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
@@ -334,8 +341,30 @@
 .rule-details summary::after { display: none; }
 .rule-details .details-content { margin-top: 0.75rem; padding-left: 0.5rem; border-left: 2px solid var(--border-color); font-size: 0.9rem; }
 .tg-buttons-wrapper { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; max-width: 300px; }
-.tg-btn { background: var(--bg-color); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; text-align: center; color: var(--btn-bg); font-weight: 500; font-size: 0.9rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-.tg-btn-inline { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 6px; color: var(--btn-bg); font-weight: 500; font-size: 0.85rem; margin: 0 4px; }
+.tg-btn { 
+    background: #2c2c2e; 
+    color: #ffffff; 
+    padding: 10px; 
+    border-radius: 8px; 
+    text-align: center; 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.tg-btn-inline { 
+    display: inline-block; 
+    background: #2c2c2e; 
+    color: #ffffff; 
+    padding: 4px 8px; 
+    border-radius: 6px; 
+    font-weight: 500; 
+    font-size: 0.85rem; 
+    margin: 0 4px; 
+    border: none;
+}
+
 .cmd-copy { background: var(--bg-color); padding: 4px 8px; border-radius: 6px; font-family: monospace; color: var(--text-main); cursor: pointer; border: 1px solid var(--border-color); transition: background 0.2s; }
 .cmd-copy:active { background: var(--border-color); }
 .cmd-hint { font-size: 0.75rem; opacity: 0.6; margin-left: 4px; }
