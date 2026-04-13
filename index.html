@@ -18,10 +18,10 @@
         }
 
         [data-theme="dark"] {
-            --bg-color: #111827;
+            --bg-color: #1a1a1c;
             --card-bg: #1f2937;
             --text-main: #f9fafb;
-            --text-muted: #9ca3af;
+            --text-muted: #d1d5db;
             --border-color: #374151;
             --btn-bg: #2563eb;
             --btn-text: #ffffff;
@@ -333,7 +333,7 @@
 .rule-title { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.5rem; }
 .rule-title .material-symbols-outlined { color: var(--btn-bg); }
 .rule-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
-.rule-text p { margin-top: 0; margin-bottom: 0.75rem; }
+.rule-text p { margin-top: 0; margin-bottom: 1.2rem; }
 .rule-text p:last-child { margin-bottom: 0; }
 .rule-details { margin-top: 0.75rem; background: transparent; border: none; padding: 0; border-radius: 0; margin-bottom: 0; box-shadow: none; }
 .rule-details[open] { border: none; box-shadow: none; }
@@ -364,12 +364,27 @@
     margin: 0 4px; 
     border: none;
 }
-
+.tg-buttons-wrapper { margin: 1.5rem 0; }
 .cmd-copy { background: var(--bg-color); padding: 4px 8px; border-radius: 6px; font-family: monospace; color: var(--text-main); cursor: pointer; border: 1px solid var(--border-color); transition: background 0.2s; }
 .cmd-copy:active { background: var(--border-color); }
 .cmd-hint { font-size: 0.75rem; opacity: 0.6; margin-left: 4px; }
 .icon-inline { vertical-align: middle; font-size: 1.1rem; margin-right: 4px; }
-
+.alert-box {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.inline-btn-wrap {
+    display: block;
+    text-align: center;
+    margin: 1.2rem 0;
+}
     </style>
 </head>
 <body>
@@ -415,7 +430,7 @@
             </summary>
             <div class="content">
                 <p style="margin-top:0;">Базовий безкоштовний ліміт для всіх — <strong>3 оголошення на тиждень</strong>. Оновлення лімітів відбувається автоматично щонеділі. Перевірити свій залишок можна в будь-якій гілці, написавши команду <code>/mylimit</code>.</p>
-                <p>Якщо ви активно ведете бізнес і цього мало, ви можете придбати преміум-тарифи (Lite, Pro або Безлім+). Вони збільшують кількість постів (до 30, 50 або безліміт на місяць) і повністю вимикають перевірки від бота-вахтера.</p>
+                <p>Якщо ви активно ведете бізнес і цього мало, ви можете отримати преміум-тарифи (Lite, Pro або Безлім+). Вони збільшують кількість постів (до 30, 50 або безліміт на місяць) і повністю вимикають перевірки від бота.</p>
                 <p><a href="https://t.me/vlkrek_bot/reklama" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 600;">👉 Збільшити ліміт тут</a></p>
             </div>
         </details>
@@ -429,8 +444,8 @@
                 <span class="material-symbols-outlined chevron">expand_more</span>
             </summary>
             <div class="content">
-                <p style="margin-top:0;">Після кожної вашої публікації бот запитає, чи правильно ви обрали категорію та локацію. Вам <strong>обов'язково</strong> треба натиснути кнопку <em>«✅ Так, все ок»</em>. Якщо ви це проігноруєте — бот мовчки видалить ваш пост.</p>
-                <p><strong>Винятки:</strong> Бот спить і не списує ліміти у гілках: <em>«Віддам безкоштовно»</em>, <em>«Підкажіть • Порадьте»</em>, <em>«Загублено • Знайдено»</em> та <em>«Скарги • ЧС • Шахраї»</em>. Там повна свобода.</p>
+                <p style="margin-top:0;">Після кожної вашої публікації бот запитає, чи правильно ви обрали категорію та локацію. Вам <strong>обов'язково</strong> треба натиснути кнопку <em>«✅ Так, все ок»</em>. Після цього треба підтвердити актуальність оголошення для Валок. Якщо ви це проігноруєте — бот мовчки видалить ваш пост.</p>
+                <p><strong>Винятки:</strong> Бот не списує ліміти у гілках: <em>«Віддам безкоштовно»</em>, <em>«Підкажіть • Порадьте»</em>, <em>«Загублено • Знайдено»</em> та <em>«Скарги • ЧС • Шахраї»</em>. Там повна свобода.</p>
             </div>
         </details>
 
@@ -443,7 +458,7 @@
                 <span class="material-symbols-outlined chevron">expand_more</span>
             </summary>
             <div class="content">
-                <p style="margin-top:0;">Коротко: будьте адекватними. Публікуйте товари тільки у відповідні за змістом гілки. Не спамте одне оголошення у всі категорії. Вказуйте ціну в пості. Обговорюйте деталі в особистих повідомленнях. Повний текст правил можна прочитати, натиснувши велику кнопку вгорі.</p>
+                <p style="margin-top:0;">Коротко: будьте адекватними. Публікуйте товари тільки у відповідні за змістом гілки. Не спамте одним оголошенням у всі категорії. Вказуйте ціну в пості. Обговорюйте деталі в особистих повідомленнях. Повний текст правил можна прочитати, натиснувши велику кнопку вгорі.</p>
             </div>
         </details>
 
@@ -457,7 +472,7 @@
             </summary>
             <div class="content">
                 <p style="margin-top:0;">Це ваша власна вітрина всередині Базарчику. Ми створюємо окрему закріплену категорію спеціально для вашого бізнесу (за бажанням — з вашим логотипом). Туди ви можете публікувати свій асортимент чи послуги абсолютно безлімітно і без перевірок бота.</p>
-                <p><a href="https://t.me/vlkrek_bot/reklama" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 600;">👉 Орендувати гілку тут</a></p>
+                <p><a href="https://t.me/vlkrek_bot/reklama" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 600;">Орендувати гілку можна тут 👉🏻</a></p>
             </div>
         </details>
 
@@ -472,9 +487,8 @@
             <div class="content">
                 <p style="margin-top:0;">Найчастіші причини бану або муту (блокування можливості писати на 48 годин):</p>
                 <ul style="padding-left: 20px; margin-top: 5px;">
-                    <li>Спам одним і тим самим постом у кілька різних категорій.</li>
-                    <li>Систематична публікація оголошень у невідповідні гілки (наприклад, продаж дивану в «Шукаю»).</li>
-                    <li>Спроба обійти ліміти за допомогою фейкових акаунтів (твінків).</li>
+                    <li>Спам одним і тим самим оголошенням у кількох різних категоріях.</li>
+                    <li>Систематична публікація оголошень у невідповідні гілки (наприклад, продаж дивану в «Шукаю»).</li>                    
                     <li>Шахрайство або неадекватна поведінка.</li>
                 </ul>
             </div>
@@ -511,7 +525,7 @@
 
         <div class="rule-block">
             <div class="rule-title">
-                <span class="material-symbols-outlined">splitscreen_add</span>
+                <span class="material-symbols-outlined">splitscreen_add — style="color: #3b82f6;</span>
                 Публікуйте в правильну категорію
             </div>
             <div class="rule-text">
@@ -521,7 +535,7 @@
 
                 <details class="rule-details">
                     <summary>
-                        <span class="material-symbols-outlined" style="font-size: 1.25rem;">add_circle</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.25rem;">add_circle — style="color: #10b981;</span>
                         Детальніше
                     </summary>
                     <div class="details-content">
@@ -559,24 +573,36 @@
                 Як працює бот в групі
             </div>
             <div class="rule-text">
-                <p><span class="material-symbols-outlined icon-inline">counter_1</span> Після публікації оголошення бот попросить вас підтвердити обрану категорію (гілку) кнопками:</p>
-                <div class="tg-buttons-wrapper">
-                    <div class="tg-btn">✅ Так, все ок</div>
-                    <div class="tg-btn">😬 Ой, не туди</div>
-                </div>
-                <p>Уважно подивіться на ваше оголошення і на категорію в яку ви його публікуєте.<br>
-                Якщо все ок — просто натисніть <span class="tg-btn-inline">✅ Так, все ок</span></p>
+                <p><span class="material-symbols-outlined icon-inline" style="color: #3b82f6;">counter_1</span> Після публікації оголошення бот попросить вас підтвердити обрану категорію (гілку) кнопками:</p>
 
-                <p><span class="material-symbols-outlined icon-inline">counter_2</span> Далі бот перевіряє, чи актуальне оголошення для Валок, і пропонує 4 варіанти:</p>
-                <div class="tg-buttons-wrapper">
-                    <div class="tg-btn">🏡 Валки</div>
-                    <div class="tg-btn">🏘️ Валки і сусідні громади</div>
-                    <div class="tg-btn">🏙️ Харків</div>
-                    <div class="tg-btn">🛣️ Інша область / місто</div>
-                </div>
-                <p>Просто оберіть відповідний варіант.</p>
+<div class="tg-buttons-wrapper">
+    <div class="tg-btn">✅ Так, все ок</div>
+    <div class="tg-btn">😬 Ой, не туди</div>
+</div>
 
-                <p><span class="material-symbols-outlined icon-inline" style="color: #ef4444;">brightness_alert</span> Якщо ви проігноруєте перевірку — бот видалить ваше оголошення</p>
+<p>Уважно подивіться на ваше оголошення і на категорію в яку ви його публікуєте.<br>
+Якщо все ок — просто натисніть:</p>
+
+<div class="inline-btn-wrap">
+    <span class="tg-btn-inline">✅ Так, все ок</span>
+</div>
+
+<p><span class="material-symbols-outlined icon-inline" style="color: #10b981;">counter_2</span> Далі бот перевіряє, чи актуальне оголошення для Валок, і пропонує 4 варіанти:</p>
+
+<div class="tg-buttons-wrapper">
+    <div class="tg-btn">🏡 Валки</div>
+    <div class="tg-btn">🏘️ Валки і сусідні громади</div>
+    <div class="tg-btn">🏙️ Харків</div>
+    <div class="tg-btn">🛣️ Інша область / місто</div>
+</div>
+
+<p>Просто оберіть відповідний варіант.</p>
+
+<div class="alert-box">
+    <span class="material-symbols-outlined" style="color: #ef4444;">brightness_alert</span>
+    <span>Якщо ви проігноруєте перевірку — бот видалить ваше оголошення</span>
+</div>
+
 
                 <p style="margin-top: 1rem; font-weight: 600; color: var(--text-main);">
                     <span class="material-symbols-outlined icon-inline">chat_paste_go</span> Команди бота
@@ -592,7 +618,7 @@
 
         <div class="rule-block">
             <div class="rule-title">
-                <span class="material-symbols-outlined">finance_mode</span>
+                <span class="material-symbols-outlined">finance_mode — style="color: #f59e0b;</span>
                 Ліміти
             </div>
             <div class="rule-text">
