@@ -322,6 +322,25 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        .rule-block { margin-bottom: 1.25rem; }
+.rule-title { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.5rem; }
+.rule-title .material-symbols-outlined { color: var(--btn-bg); }
+.rule-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
+.rule-text p { margin-top: 0; margin-bottom: 0.75rem; }
+.rule-text p:last-child { margin-bottom: 0; }
+.rule-details { margin-top: 0.75rem; background: transparent; border: none; padding: 0; border-radius: 0; margin-bottom: 0; box-shadow: none; }
+.rule-details[open] { border: none; box-shadow: none; }
+.rule-details summary { padding: 0; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--btn-bg); font-weight: 600; cursor: pointer; user-select: none; }
+.rule-details summary::after { display: none; }
+.rule-details .details-content { margin-top: 0.75rem; padding-left: 0.5rem; border-left: 2px solid var(--border-color); font-size: 0.9rem; }
+.tg-buttons-wrapper { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; max-width: 300px; }
+.tg-btn { background: var(--bg-color); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; text-align: center; color: var(--btn-bg); font-weight: 500; font-size: 0.9rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.tg-btn-inline { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 6px; color: var(--btn-bg); font-weight: 500; font-size: 0.85rem; margin: 0 4px; }
+.cmd-copy { background: var(--bg-color); padding: 4px 8px; border-radius: 6px; font-family: monospace; color: var(--text-main); cursor: pointer; border: 1px solid var(--border-color); transition: background 0.2s; }
+.cmd-copy:active { background: var(--border-color); }
+.cmd-hint { font-size: 0.75rem; opacity: 0.6; margin-left: 4px; }
+.icon-inline { vertical-align: middle; font-size: 1.1rem; margin-right: 4px; }
+
     </style>
 </head>
 <body>
@@ -442,31 +461,119 @@
 
     <div class="modal-overlay" id="rulesModal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2>Основні правила групи</h2>
-                <button class="close-modal-btn" id="closeRulesModal">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
+    <div class="modal-header">
+        <h2>📋 ПРАВИЛА ГРУПИ</h2>
+        <button class="close-modal-btn" id="closeRulesModal">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p style="margin-top: 0; font-weight: 500;">Тут все просто, але є кілька речей, які треба знати</p>
+
+        <div class="rule-block">
+            <div class="rule-title">
+                <span class="material-symbols-outlined">ad</span>
+                1 оголошення = 1 товар або послуга
             </div>
-            <div class="modal-body">
-    <p><strong>Вітаємо на Валківському Базарчику!</strong> Це локальна спільнота для своїх, а не всеукраїнська смітєзвалка оголошень. Тому в нас є кілька залізних правил:</p>
-    
-    <ul style="padding-left: 20px; margin-bottom: 20px;">
-        <li style="margin-bottom: 10px;"><strong>📍 Тільки локал.</strong> Ми публікуємо оголошення актуальні для жителів Валок, сусідніх громад та Харкова. Якщо ви продаєте курей в Ужгороді — бот знесе пост.</li>
-        
-        <li style="margin-bottom: 10px;"><strong>🎯 Категорії — це святе.</strong> Публікуйте оголошення тільки у відповідні гілки. Свіжа телятина в «Красі і догляді» не продасться. «Домашні тварини» — це про котиків і песиків, а для курочок і козочок є «Сільгосп тварини». Гілка «Шукаю / куплю» створена для пошуку, а не для продажу.</li>
-        
-        <li style="margin-bottom: 10px;"><strong>🛍 Один товар = одне оголошення.</strong> Не робіть вінегрет. Якщо ви продаєте джинси, телефон і паралельно робите манікюр — це три різні оголошення в три різні гілки.</li>
-        
-        <li style="margin-bottom: 10px;"><strong>💰 Пишіть ціни одразу.</strong> Поважайте чужий час — вказуйте ціну чи прайс прямо в пості. Усі деталі та торги — виключно в особистих повідомленнях. Не розводьте флуд під постами.</li>
-        
-        <li style="margin-bottom: 10px;"><strong>🚫 Ніякого кроспостингу.</strong> Заборонено спамити одним і тим самим повідомленням у всі гілки підряд. Покарання: спочатку видалення, потім бан.</li>
-    </ul>
-    
-    <p><em>Незнання правил не звільняє від бану чи муту на 48 годин.</em></p>
-</div>
+            <div class="rule-text">
+                Продаєте джинси, курей і ще й робите манікюр? Це три окремі оголошення в трьох окремих категоріях. Бажано одразу з цінами.
+            </div>
+        </div>
+
+        <div class="rule-block">
+            <div class="rule-title">
+                <span class="material-symbols-outlined">splitscreen_add</span>
+                Публікуйте в правильну категорію
+            </div>
+            <div class="rule-text">
+                <p>Здається очевидним, але не для всіх. <br>
+                Публікувати оголошення потрібно тільки у відповідну для вашого оголошення гілку. <br>
+                Спамите своїм оголошенням в усіх категоріях одразу — на перший раз ми просто видалимо всі ваші оголошення, на другий раз — бан. Просто не треба так робити.</p>
+
+                <details class="rule-details">
+                    <summary>
+                        <span class="material-symbols-outlined" style="font-size: 1.25rem;">add_circle</span>
+                        Детальніше
+                    </summary>
+                    <div class="details-content">
+                        <p>• Публікація оголошень про ноготочки в категорії «Сільгосп тварини/продукти» ніяк не підвищить його ефективність, як і ваша «свіжа телятина» в категорії «Краса і догляд».</p>
+                        <p>• Категорія «Домашні тварини» створена не для живих чи мертвих курочок і козочок, для них є категорія «Сільгосп тварини / продукція» або якщо вже вашій курочці прийшов капєц — в «Продукти • Їжа» .</p>
+                        <p>• «Домашні тварини» — це все про і для котиків, песиків, гризунів, папуг і так далі.</p>
+                        <p>• Категорія «Шукаю / куплю» натякає на своє призначення прямо у своїй назві, туди не треба просто так публікувати свої «Продам» (хіба що у випадку, якщо ви відповідаєте комусь на їх «Шукаю/Куплю»).</p>
+                        <p>Всі інші категорії працюють так само. Надаєте якусь послугу: ремонтуєте, фотографуєте, копаєте, малюєте, нянчитесь, фарбуєте, печете торти на замовлення, танцюєте у костюмі пса патрона на святах, консультуєте і тд — вам у «Послуги» (ні, не в «Вакансії • Робота»).</p>
+                        <p>• Посівні буряки і все інше, що треба спочатку посадити — в «Сільгосп товари і продукція», а не в «Їжа • Продукти»</p>
+                        <p>Детальніше про правила в окремих «проблемних» категоріях:</p>
+                        <p>Вакансії • Робота:<br><a href="https://t.me/valkybazar/414/160148" target="_blank">t.me/valkybazar/414/160148</a></p>
+                        <p>Продукти • Їжа:<br><a href="https://t.me/valkybazar/424/160260" target="_blank">t.me/valkybazar/424/160260</a></p>
+                        <p>Послуги:<br><a href="https://t.me/valkybazar/410/160258" target="_blank">t.me/valkybazar/410/160258</a></p>
+                        <p>Товари для дому і саду • Декор:<br><a href="https://t.me/valkybazar/418/160223" target="_blank">t.me/valkybazar/418/160223</a></p>
+                        <p>Куплю • Шукаю:<br><a href="https://t.me/valkybazar/405/160133" target="_blank">t.me/valkybazar/405/160133</a></p>
+                        <p>Якщо вам прям дуже не вистачає якоїсь категорії — пишіть в гілку «Питання та пропозиції щодо групи» або нам в бот <a href="https://t.me/valkysho_bot" target="_blank">@valkysho_bot</a></p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="rule-block">
+            <div class="rule-title">
+                <span class="material-symbols-outlined">sell</span>
+                Пишіть ціни одразу
+            </div>
+            <div class="rule-text">
+                Зараз це не суворе правило, але бажано поважати чужий час і вказувати ціну чи прайс прямо у вашому оголошенні, якщо це можливо. Усі деталі обговорюйте виключно в особистих повідомленнях.
+            </div>
+        </div>
+
+        <div class="rule-block">
+            <div class="rule-title">
+                <span class="material-symbols-outlined">smart_toy</span>
+                Як працює бот в групі
+            </div>
+            <div class="rule-text">
+                <p><span class="material-symbols-outlined icon-inline">counter_1</span> Після публікації оголошення бот попросить вас підтвердити обрану категорію (гілку) кнопками:</p>
+                <div class="tg-buttons-wrapper">
+                    <div class="tg-btn">✅ Так, все ок</div>
+                    <div class="tg-btn">😬 Ой, не туди</div>
+                </div>
+                <p>Уважно подивіться на ваше оголошення і на категорію в яку ви його публікуєте.<br>
+                Якщо все ок — просто натисніть <span class="tg-btn-inline">✅ Так, все ок</span></p>
+
+                <p><span class="material-symbols-outlined icon-inline">counter_2</span> Далі бот перевіряє, чи актуальне оголошення для Валок, і пропонує 4 варіанти:</p>
+                <div class="tg-buttons-wrapper">
+                    <div class="tg-btn">🏡 Валки</div>
+                    <div class="tg-btn">🏘️ Валки і сусідні громади</div>
+                    <div class="tg-btn">🏙️ Харків</div>
+                    <div class="tg-btn">🛣️ Інша область / місто</div>
+                </div>
+                <p>Просто оберіть відповідний варіант.</p>
+
+                <p><span class="material-symbols-outlined icon-inline" style="color: #ef4444;">brightness_alert</span> Якщо ви проігноруєте перевірку — бот видалить ваше оголошення</p>
+
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--text-main);">
+                    <span class="material-symbols-outlined icon-inline">chat_paste_go</span> Команди бота
+                </p>
+                <p>
+                    <span class="cmd-copy" onclick="navigator.clipboard.writeText('/mylimit')">/mylimit</span> <span class="cmd-hint">[натисніть, щоб скопіювати]</span> — перевірити свій ліміт
+                </p>
+                <p>
+                    <span class="cmd-copy" onclick="navigator.clipboard.writeText('@Admin')">@Admin</span> <span class="cmd-hint">[натисніть, щоб скопіювати]</span> — покликати адмінів
+                </p>
+            </div>
+        </div>
+
+        <div class="rule-block">
+            <div class="rule-title">
+                <span class="material-symbols-outlined">finance_mode</span>
+                Ліміти
+            </div>
+            <div class="rule-text">
+                <p>Базовий ліміт для всіх — 3 оголошення / тиждень. Ліміт вичерпався, але терміново треба опублікувати оголошення? Після повідомлення бота натисніть «Скинути ліміт позачергово» (доступно один раз на місяць).</p>
+                <p>Активно продаєте і трьох постів замало? Є спеціальні тарифи з більшими лімітами, безлімітом → <a href="https://t.me/vlkrek_bot/reklama" target="_blank">t.me/vlkrek_bot/reklama</a></p>
+            </div>
         </div>
     </div>
+</div>
+
 
     <script>
         const themeBtn = document.getElementById('themeBtn');
